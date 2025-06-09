@@ -1,40 +1,39 @@
-//
-//    The Dark Mode System
-//
-
-// helper functions to toggle dark mode
-function enableDarkMode() {
-	document.body.classList.add('dark-mode');
-	localStorage.setItem('theme', 'dark');
-}
-function disableDarkMode() {
-	document.body.classList.remove('dark-mode');
-	localStorage.setItem('theme', 'light');
-}
-
-// determines a new users dark mode preferences
-function detectColorScheme() {
-	// default to the light theme
-	let theme = 'light';
-
-	// check localStorage for a saved 'theme' variable. if it's there, the user has visited before, so apply the necessary theme choices
-	if (localStorage.getItem('theme')) {
-		theme = localStorage.getItem('theme');
-	}
-	// if it's not there, check to see if the user has applied dark mode preferences themselves in the browser
-	else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		theme = 'dark';
-	}
-
-	// if there is no preference set, the default of light will be used. apply accordingly
-	theme === 'dark' ? enableDarkMode() : disableDarkMode();
-}
-
-// run on page load
-detectColorScheme();
-
-// add event listener to the dark mode button toggle
-document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-	// on click, check localStorage for the dark mode value, use to apply the opposite of what's saved
-	localStorage.getItem('theme') === 'light' ? enableDarkMode() : disableDarkMode();
-});
+function togglePlayButton() {
+    // Select all elements with the .cs-picture class
+    const pictures = document.querySelectorAll('#hero-2219 .cs-video-group');
+  
+    // Add a click event listener to each .cs-picture element
+    pictures.forEach(picture => {
+      picture.addEventListener('click', () => {
+        // Select all elements with the .cs-play class
+        const playButtons = document.querySelectorAll('#hero-2219 .cs-play');
+        
+        // Toggle the .cs-hide class on each .cs-play element
+        playButtons.forEach(button => {
+          button.classList.toggle('cs-hide');
+        });
+      });
+    });
+  }
+  
+  // Call the function to activate the event listeners
+  togglePlayButton();
+  
+  function toggleVideoPlayback() {
+    // Select the video element
+    const video = document.querySelector('#hero-2219 video');
+  
+    // Add a click event listener to the video
+    video.addEventListener('click', () => {
+      // Check if the video is paused
+      if (video.paused) {
+        video.play(); // Play the video if it is paused
+      } else {
+        video.pause(); // Pause the video if it is playing
+      }
+    });
+  }
+  
+  // Call the function to activate the event listener
+  toggleVideoPlayback();
+                                
