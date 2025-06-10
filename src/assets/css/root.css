@@ -320,7 +320,6 @@
     height: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    padding: display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -992,7 +991,7 @@
     height: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    padding: display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
