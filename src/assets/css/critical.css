@@ -58,6 +58,9 @@
     color: var(--bodyTextColorWhite);
     margin-bottom: 2rem;
   }
+  #hero-2344 .cs-topper {
+    color: var(--bodyTextColorWhite);
+  }
   #hero-2344 .cs-button-solid {
     font-size: 1rem;
     font-weight: 700;
